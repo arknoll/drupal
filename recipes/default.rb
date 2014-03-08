@@ -158,7 +158,7 @@ node[:drupal][:sites].each do |site_name, site|
               set -e
               #{cmd}
             EOH
-            only_if { node[:platform_family] == 'redhat' || node[:platform_family] == 'centos'}
+            only_if { node[:platform_family] == 'redhat' || node[:platform_family] == 'centos' }
           end
 
           execute 'drupal-current-relative' do
