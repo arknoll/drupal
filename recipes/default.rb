@@ -110,7 +110,7 @@ node[:drupal][:sites].each do |site_name, site|
 
       before_migrate do
         # If the Drush make hash is nil, then do nothing, else make the site
-        if site.has_key?('drush_make')
+        if site.has_key?("drush_make")
 
           # we are going to remove all the files in this folder, this will allow
           # the drush make to occur
