@@ -92,6 +92,13 @@ node[:drupal][:sites].each do |site_name, site|
       recursive true
     end
 
+    directory "#{assets}/private" do
+      not_if { ::File.exists?("#{assets}/private") }
+      mode 00755
+      action :create
+      recursive true
+    end
+
     directory "#{assets}/shared" do
 #        owner node[:drupal][:server][:web_user]
 #        group node[:drupal][:server][:web_group]
